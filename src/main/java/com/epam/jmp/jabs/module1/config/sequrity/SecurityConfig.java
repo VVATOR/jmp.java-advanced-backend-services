@@ -18,6 +18,7 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
     private static final String AUTH_ENDPOINT_PATTERN = "/api/v1/auth/**";
     private static final String PRODUCTS_ENDPOINT_PATTERN = "/api/v1/products";
+    private static final String H2_CONSOLE_ENDPOINT_PATTERN = "/h2-console/**";
     private static final String ROOT_PATTERN = "/";
 
     @Bean
@@ -25,6 +26,7 @@ public class SecurityConfig {
         return http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(ROOT_PATTERN, AUTH_ENDPOINT_PATTERN).permitAll()
+                        .requestMatchers(H2_CONSOLE_ENDPOINT_PATTERN).permitAll()
                         .requestMatchers(HttpMethod.GET, PRODUCTS_ENDPOINT_PATTERN).permitAll()
                         .requestMatchers(HttpMethod.DELETE, PRODUCTS_ENDPOINT_PATTERN).hasRole(UserRoles.ADMIN.name())
                         .requestMatchers(HttpMethod.PUT, PRODUCTS_ENDPOINT_PATTERN).hasAnyRole(UserRoles.ADMIN.name(), UserRoles.USER.name())

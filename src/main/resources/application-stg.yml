@@ -5,4 +5,7 @@ spring:
     password: stg_pass
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
+  liquibase:
+    change-log: classpath:liquibase/db/changelog/stg/db.changelog-master.xml
+    enabled: true

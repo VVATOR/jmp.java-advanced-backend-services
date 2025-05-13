@@ -1,0 +1,49 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet id="2" author="you">
+        <insert tableName="products">
+            <column name="name" value="Toyota Corolla"/>
+            <column name="price" valueNumeric="20000.00"/>
+        </insert>
+        <insert tableName="products">
+            <column name="name" value="Honda Civic"/>
+            <column name="price" valueNumeric="22000.00"/>
+        </insert>
+        <insert tableName="products">
+            <column name="name" value="Ford Focus"/>
+            <column name="price" valueNumeric="21000.00"/>
+        </insert>
+        <insert tableName="products">
+            <column name="name" value="Chevrolet Malibu"/>
+            <column name="price" valueNumeric="25000.00"/>
+        </insert>
+        <insert tableName="products">
+            <column name="name" value="BMW 3 Series"/>
+            <column name="price" valueNumeric="35000.00"/>
+        </insert>
+        <insert tableName="products">
+            <column name="name" value="Audi A4"/>
+            <column name="price" valueNumeric="37000.00"/>
+        </insert>
+        <insert tableName="products">
+            <column name="name" value="Mercedes-Benz C-Class"/>
+            <column name="price" valueNumeric="40000.00"/>
+        </insert>
+        <insert tableName="products">
+            <column name="name" value="Volkswagen Golf"/>
+            <column name="price" valueNumeric="23000.00"/>
+        </insert>
+        <insert tableName="products">
+            <column name="name" value="Hyundai Elantra"/>
+            <column name="price" valueNumeric="19000.00"/>
+        </insert>
+        <insert tableName="products">
+            <column name="name" value="Kia Forte"/>
+            <column name="price" valueNumeric="18500.00"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

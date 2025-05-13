@@ -8,6 +8,9 @@ spring:
       format_sql: true
     hibernate:
       ddl-auto: update
+  liquibase:
+    change-log: classpath:liquibase/db/changelog/dev/db.changelog-master.xml
+    enabled: true
 logging:
   level:
     org.springframework.security: DEBUG

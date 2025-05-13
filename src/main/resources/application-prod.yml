@@ -9,6 +9,12 @@ spring:
       format_sql: true
     hibernate:
       ddl-auto: none
+  h2:
+    console:
+      enabled: false
+  liquibase:
+    change-log: classpath:liquibase/db/changelog/prod/db.changelog-master.xml
+    enabled: true
 logging:
   level:
     org.springframework.security: error
