@@ -22,9 +22,24 @@ spring:
   h2:
     console:
       enabled: true
+      settings:
+        web-allow-others: true
+      path: "/h2-console"
   liquibase:
     change-log: classpath:liquibase/db/changelog/db.changelog-master.xml
     enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+  prometheus:
+    metrics:
+      export:
+        enabled: true
 logging:
   level:
     org.springframework.security: DEBUG

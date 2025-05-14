@@ -1,4 +1,4 @@
-package com.epam.jmp.jabs.module1.config;
+package com.epam.jmp.jabs.module1.config.mapping;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

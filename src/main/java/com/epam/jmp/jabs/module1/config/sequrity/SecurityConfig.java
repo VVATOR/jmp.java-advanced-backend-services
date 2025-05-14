@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
 import org.springframework.security.oauth2.server.resource.authentication.JwtGrantedAuthoritiesConverter;
 import org.springframework.security.web.SecurityFilterChain;
@@ -16,6 +17,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 @EnableMethodSecurity
 public class SecurityConfig {
+    private static final String ACTUATOR_ENDPOINT_PATTERN = "/actuator/**";
     private static final String AUTH_ENDPOINT_PATTERN = "/api/v1/auth/**";
     private static final String PRODUCTS_ENDPOINT_PATTERN = "/api/v1/products";
     private static final String H2_CONSOLE_ENDPOINT_PATTERN = "/h2-console/**";
@@ -27,6 +29,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(ROOT_PATTERN, AUTH_ENDPOINT_PATTERN).permitAll()
                         .requestMatchers(H2_CONSOLE_ENDPOINT_PATTERN).permitAll()
+                        .requestMatchers(ACTUATOR_ENDPOINT_PATTERN).permitAll()
                         .requestMatchers(HttpMethod.GET, PRODUCTS_ENDPOINT_PATTERN).permitAll()
                         .requestMatchers(HttpMethod.DELETE, PRODUCTS_ENDPOINT_PATTERN).hasRole(UserRoles.ADMIN.name())
                         .requestMatchers(HttpMethod.PUT, PRODUCTS_ENDPOINT_PATTERN).hasAnyRole(UserRoles.ADMIN.name(), UserRoles.USER.name())
@@ -36,8 +39,10 @@ public class SecurityConfig {
                 .oauth2ResourceServer(oauth2 -> oauth2
                         .jwt(jwt -> jwt
                                 .jwtAuthenticationConverter(jwtAuthenticationConverter)
-                        )
-                ).build();
+                        ))
+                .headers(headers -> headers
+                        .frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin)) // needed for h2-console (support of frames)
+                .build();
     }
 
     @Bean
