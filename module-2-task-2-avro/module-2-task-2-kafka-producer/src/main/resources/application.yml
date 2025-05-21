@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: module-2-task-2-kafka-producer
+
+kafka-config:
+  bootstrap-servers: localhost:19092, localhost:29092, localhost:39092
+  schema-registry-url-key: schema.registry.url
+  schema-registry-url: http://localhost:8081
+  topic-name: user-topic
+
+kafka-producer-config:
+  key-serializer-class: org.apache.kafka.common.serialization.StringSerializer
+  value-serializer-class: io.confluent.kafka.serializers.KafkaAvroSerializer
