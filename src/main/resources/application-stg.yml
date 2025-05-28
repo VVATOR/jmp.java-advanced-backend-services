@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:stg
+    username: stg_user
+    password: stg_pass
+  jpa:
+    hibernate:
+      ddl-auto: none
+  liquibase:
+    change-log: classpath:liquibase/db/changelog/stg/db.changelog-master.xml
+    enabled: true

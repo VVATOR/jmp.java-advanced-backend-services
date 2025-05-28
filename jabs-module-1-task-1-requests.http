@@ -1,0 +1,48 @@
+
+##### Authentication and Authorization
+### Gets a jwt token
+POST http://localhost:8080/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "login": "administrator",
+  "roles": ["ADMIN"]
+}
+
+> {%
+    client.global.set("jwtToken", response.body);
+%}
+
+### Gets a products
+GET http://localhost:8080/api/v1/products
+Content-Type: application/json
+Authorization: Bearer {{jwtToken}}
+
+### Gets a product by id
+GET http://localhost:8080/api/v1/products/1
+Content-Type: application/json
+Authorization: Bearer {{jwtToken}}
+
+### Creates a product
+POST http://localhost:8080/api/v1/products
+Content-Type: application/json
+Authorization: Bearer {{jwtToken}}
+
+{
+  "name": "Ford",
+  "price": 50000
+}
+
+### Updates a product by id
+PUT http://localhost:8080/api/v1/products/1
+Content-Type: application/json
+Authorization: Bearer {{jwtToken}}
+
+{
+  "name": "Skoda",
+  "price": 30000
+}
+
+### Removes a product by id
+DELETE http://localhost:8080/api/v1/products/1
+Authorization: Bearer {{jwtToken}}

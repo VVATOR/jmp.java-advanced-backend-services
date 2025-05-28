@@ -1,0 +1,33 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet id="2" author="you">
+        <insert tableName="products">
+            <column name="name" value="Skoda Superb 3 Series"/>
+            <column name="price" valueNumeric="18490.00"/>
+        </insert>
+        <insert tableName="products">
+            <column name="name" value="Lada granta"/>
+            <column name="price" valueNumeric="3600.00"/>
+        </insert>
+        <insert tableName="products">
+            <column name="name" value="Mercedes-Benz C-Class"/>
+            <column name="price" valueNumeric="60000.00"/>
+        </insert>
+        <insert tableName="products">
+            <column name="name" value="Volkswagen PAssat B3"/>
+            <column name="price" valueNumeric="10000.00"/>
+        </insert>
+        <insert tableName="products">
+            <column name="name" value="Hyundai Sonata"/>
+            <column name="price" valueNumeric="13000.00"/>
+        </insert>
+        <insert tableName="products">
+            <column name="name" value="Kia Rio"/>
+            <column name="price" valueNumeric="28500.00"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
