@@ -1,0 +1,27 @@
+
+###
+GET http://localhost:8080/api/v1/products
+
+###
+GET http://localhost:8080/api/v1/products/3
+
+###
+POST http://localhost:8080/api/v1/products
+Content-Type: application/json
+
+{
+  "name": "Ford",
+  "price": 50000
+}
+
+###
+PUT http://localhost:8080/api/v1/products/1
+Content-Type: application/json
+
+{
+  "name": "lamborghini",
+  "price": 30000
+}
+
+###
+DELETE http://localhost:8080/api/v1/products/2
