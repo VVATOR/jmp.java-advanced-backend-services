@@ -1,0 +1,49 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet id="2" author="you">
+        <insert tableName="products">
+            <column name="name" value="Toyota STG"/>
+            <column name="price" valueNumeric="20000.00"/>
+        </insert>
+        <insert tableName="products">
+            <column name="name" value="Honda STG"/>
+            <column name="price" valueNumeric="22000.00"/>
+        </insert>
+        <insert tableName="products">
+            <column name="name" value="Ford STG"/>
+            <column name="price" valueNumeric="21000.00"/>
+        </insert>
+        <insert tableName="products">
+            <column name="name" value="Chevrolet STG"/>
+            <column name="price" valueNumeric="25000.00"/>
+        </insert>
+        <insert tableName="products">
+            <column name="name" value="BMW STG"/>
+            <column name="price" valueNumeric="35000.00"/>
+        </insert>
+        <insert tableName="products">
+            <column name="name" value="Audi STG"/>
+            <column name="price" valueNumeric="37000.00"/>
+        </insert>
+        <insert tableName="products">
+            <column name="name" value="Mercedes STG"/>
+            <column name="price" valueNumeric="40000.00"/>
+        </insert>
+        <insert tableName="products">
+            <column name="name" value="Volkswagen STG"/>
+            <column name="price" valueNumeric="23000.00"/>
+        </insert>
+        <insert tableName="products">
+            <column name="name" value="Hyundai STG"/>
+            <column name="price" valueNumeric="19000.00"/>
+        </insert>
+        <insert tableName="products">
+            <column name="name" value="Kia STG"/>
+            <column name="price" valueNumeric="18500.00"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
