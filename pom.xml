@@ -17,6 +17,10 @@
     <name>module-2-rpc-protocols-and-dataformats</name>
     <description>module-2-rpc-protocols-and-dataformats</description>
 
+    <modules>
+        <module>module-2-task-1-rpc</module>
+    </modules>
+
     <properties>
         <java.version>17</java.version>
     </properties>
