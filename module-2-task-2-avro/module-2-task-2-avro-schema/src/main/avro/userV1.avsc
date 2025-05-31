@@ -1,0 +1,10 @@
+{
+  "namespace": "com.epam.jmp.jabs",
+  "type": "record",
+  "name": "User",
+  "fields": [
+    {"name": "name", "type": "string"},
+    {"name": "favorite_number",  "type": ["int", "null"], "default":  10},
+    {"name": "favorite_color", "type": ["string", "null"], "default":  "red"}
+  ]
+}

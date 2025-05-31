@@ -1,0 +1,9 @@
+###
+POST http://localhost:8080/kafka/v1/users
+Content-Type: application/json
+
+{
+  "name": "vitali",
+  "favorite_number": 13,
+    "favorite_color": "orange"
+}
